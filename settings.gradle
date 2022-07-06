@@ -1,1 +1,3 @@
 rootProject.name = 'car-application'
+include 'cp-functional'
+
