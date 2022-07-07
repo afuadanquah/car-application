@@ -1,4 +1,4 @@
-package uk.sky.ovp.ca.functional.util;
+package uk.sky.ovp.ca.functional;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
