@@ -14,7 +14,6 @@ public class PrivateController {
     public ResponseEntity<String> status(){
 
         return new ResponseEntity<>("OK", HttpStatus.OK);
-        //return "OK";
     }
 
 }
