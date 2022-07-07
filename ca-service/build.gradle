@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+group 'uk.sky'
+version '0.0.1-SNAPSHOT'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.13.3'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    testImplementation 'io.cucumber:cucumber-java:7.3.3'
+    testImplementation 'io.cucumber:cucumber-junit:7.3.3'
+    testImplementation 'io.cucumber:cucumber-spring:7.3.3'
+    testImplementation 'io.rest-assured:rest-assured:5.1.1'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.8.2'
+    testImplementation 'com.github.tomakehurst:wiremock-jre8:2.33.2'
+    testImplementation 'org.awaitility:awaitility:4.2.0'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,3 +1,4 @@
 rootProject.name = 'car-application'
-include 'cp-functional'
+include 'ca-functional'
+include 'ca-service'
 

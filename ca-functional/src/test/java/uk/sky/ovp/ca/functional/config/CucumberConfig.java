@@ -1,4 +1,4 @@
-package uk.sky.ovp.cp.functional.config;
+package uk.sky.ovp.ca.functional.config;
 
 import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.boot.test.context.ConfigDataApplicationContextInitializer;

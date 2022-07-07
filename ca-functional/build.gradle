@@ -12,6 +12,7 @@ repositories {
 }
 
 dependencies {
+    testImplementation project(":ca-service")
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.12.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
