@@ -1,10 +1,13 @@
 package uk.sky.carapplication.controller;
 
-import org.apache.hc.core5.http.HttpStatus;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.springframework.http.HttpStatus;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.http.ResponseEntity;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,17 +19,22 @@ public class PrivateControllerTest {
     public void statusCodeIsCorrect(){
     PrivateController privateController = new PrivateController();
     assertTrue(privateController.status().getStatusCode().is2xxSuccessful());
-
     }
 
-    @ParameterizedTest
-    @ValueSource(ints = {HttpStatus.SC_BAD_REQUEST})
-    public void statusCodeIsIncorrect(HttpStatus httpStatus){
-    PrivateController privateController = new PrivateController();;
 
-    assertEquals(privateController.status().getStatusCode().value(), httpStatus);
 
-        System.out.println(httpStatus);
+//    //@ValueSource(ints = {HttpStatus.BAD_REQUEST})
+//    private static List<HttpStatus> getBadHTTPStatuses(){
+//        return List.of(HttpStatus.BAD_REQUEST, HttpStatus.BAD_GATEWAY);
+//    }
+//    @ParameterizedTest
+//    @MethodSource("getBadHTTPStatuses")
+//    public void statusCodeIsIncorrect(HttpStatus httpStatus){
+//    PrivateController privateController = new PrivateController();;
+//
+//    assertEquals(httpStatus.value(), privateController.status().getStatusCode().value());
+//
+//        System.out.println(httpStatus);
 
 //    assertTrue(privateController.status().getStatusCode().);
     }

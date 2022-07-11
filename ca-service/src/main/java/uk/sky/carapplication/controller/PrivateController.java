@@ -13,7 +13,7 @@ public class PrivateController {
     @GetMapping("/status")
     public ResponseEntity<String> status(){
 
-        return new ResponseEntity<>("OK", HttpStatus.OK);
+        return new ResponseEntity<>("OK", HttpStatus.BAD_REQUEST);
     }
 
 }
