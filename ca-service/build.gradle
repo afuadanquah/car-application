@@ -30,7 +30,7 @@ dependencies {
     testImplementation 'org.junit.vintage:junit-vintage-engine:5.8.2'
     testImplementation 'com.github.tomakehurst:wiremock-jre8:2.33.2'
     testImplementation 'org.awaitility:awaitility:4.2.0'
-
+    compileOnly 'org.projectlombok:lombok:1.18.24'
     testCompileOnly 'org.projectlombok:lombok:1.18.24'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 }

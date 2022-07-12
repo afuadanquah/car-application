@@ -1,6 +1,8 @@
 package uk.sky.carapplication.controller;
 
 import org.junit.jupiter.api.*;
+import org.mockito.Mock;
+import uk.sky.carapplication.service.HeadersService;
 
 import java.util.Objects;
 
@@ -10,10 +12,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PrivateControllerTest {
 
     private PrivateController privateController;
+    @Mock
+    HeadersService headersService;
 
     @BeforeEach
     public void setUp(){
-        privateController = new PrivateController();
+        privateController = new PrivateController(headersService);
     }
 
     @Test
