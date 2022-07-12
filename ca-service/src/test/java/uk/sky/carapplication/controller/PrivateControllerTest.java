@@ -2,16 +2,31 @@ package uk.sky.carapplication.controller;
 
 import org.junit.jupiter.api.*;
 
+import java.util.Objects;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
 public class PrivateControllerTest {
 
-    @Test
-    public void statusCodeIsCorrect(){
-    PrivateController privateController = new PrivateController();
-    assertTrue(privateController.status().getStatusCode().is2xxSuccessful());
+    private PrivateController privateController;
+
+    @BeforeEach
+    public void setUp(){
+        privateController = new PrivateController();
     }
+
+    @Test
+    public void testThatStatusCodeIsCorrect(){
+        assertTrue(privateController.status().getStatusCode().is2xxSuccessful());
+    }
+
+    @Test
+    public void testThatBodyIsCorrect(){
+        assertTrue(Objects.requireNonNull(privateController.status().getBody()).matches("OK"));
+    }
+
+
 
 
 
