@@ -37,7 +37,7 @@ public class PrivateControllerTest {
 //        System.out.println(httpStatus);
 
 //    assertTrue(privateController.status().getStatusCode().);
-    }
+
 
 //    assertAll(
 //                () -> assertEquals(2022, sortedModelsByYear.get(0).getYear()),
