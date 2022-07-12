@@ -3,10 +3,12 @@ package uk.sky.ovp.ca.functional.steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import uk.sky.carapplication.service.HeadersService;
 import uk.sky.ovp.ca.functional.models.HttpRequest;
 import uk.sky.ovp.ca.functional.util.Client;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PrivateEndpointSteps {
 
@@ -32,5 +34,11 @@ public class PrivateEndpointSteps {
     public void clientReceivesResponseBody(String responseBody){
         assertThat(httpRequest.getResponseBody()).isEqualTo(responseBody);
     }
+
+    @And("The client receives a header of {string}")
+    public void clientReceivesIDHeader(String header){
+        assertNotNull(httpRequest.getResponse().getHeader(header));
+    }
+
 
 }
