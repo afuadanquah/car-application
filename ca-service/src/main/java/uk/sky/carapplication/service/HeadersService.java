@@ -2,6 +2,7 @@ package uk.sky.carapplication.service;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
+import uk.sky.carapplication.model.Car;
 
 import java.util.UUID;
 
@@ -12,5 +13,6 @@ public class HeadersService {
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("x-sky-request-id", UUID.randomUUID().toString());
         return responseHeaders;
+
     }
 }
