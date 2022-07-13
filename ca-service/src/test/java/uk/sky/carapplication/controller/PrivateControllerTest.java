@@ -1,24 +1,23 @@
 package uk.sky.carapplication.controller;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import uk.sky.carapplication.service.HeadersService;
 
 import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
+@ExtendWith(MockitoExtension.class)
 public class PrivateControllerTest {
 
-    private PrivateController privateController;
+    @InjectMocks
+    PrivateController privateController;
     @Mock
     HeadersService headersService;
-
-    @BeforeEach
-    public void setUp(){
-        privateController = new PrivateController(headersService);
-    }
 
     @Test
     public void testThatStatusCodeIsCorrect(){
