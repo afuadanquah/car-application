@@ -3,13 +3,7 @@ package uk.sky.carapplication.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import uk.sky.carapplication.model.CarCreateResponse;
-import uk.sky.carapplication.service.CarService;
-import uk.sky.carapplication.model.Car;
 import uk.sky.carapplication.service.HeadersService;
-
-import java.net.URI;
 
 //@RequiredArgsConstructor
 @RestController

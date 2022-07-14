@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import uk.sky.carapplication.model.Car;
-import uk.sky.carapplication.model.CarCreateResponse;
+import uk.sky.carapplication.model.CreateCarResponse;
 import uk.sky.carapplication.service.CarService;
 
 @RestController
@@ -21,8 +21,8 @@ public class CarController {
     }
 
     @PostMapping(path = "/create")
-    public ResponseEntity<CarCreateResponse> createCar(@RequestBody Car car){
-        CarCreateResponse response = carService.addCar(car);
+    public ResponseEntity<CreateCarResponse> createCar(@RequestBody Car car){
+        CreateCarResponse response = carService.addCar(car);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
