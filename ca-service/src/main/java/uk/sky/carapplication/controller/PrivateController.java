@@ -17,12 +17,10 @@ import java.net.URI;
 public class PrivateController {
 
     private final HeadersService headersService;
-    private final CarService carService;
 
     //this is what RequiredArgsConstructor does for you
-    public PrivateController(HeadersService headersService, CarService carService) {
+    public PrivateController(HeadersService headersService) {
         this.headersService = headersService;
-        this.carService = carService;
     }
 
     @GetMapping("/status")
@@ -30,10 +28,5 @@ public class PrivateController {
         return new ResponseEntity<>("OK", headersService.createIDHeader(), HttpStatus.OK);
     }
 
-    @PostMapping(path = "/catalogue", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<CarCreateResponse> addCar(@RequestBody Car car){
-        CarCreateResponse response = carService.addCar(car);
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
 
 }
