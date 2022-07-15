@@ -25,7 +25,7 @@ public class Car {
     @Column(nullable = false)
     private String colour;
     @Column(nullable = false)
-    private Integer age;
+    private Integer yearMade;
     @Column(nullable = false)
     private double price;
 
