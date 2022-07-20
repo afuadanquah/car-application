@@ -1,18 +1,20 @@
 package uk.sky.carapplication.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 
+import static javax.persistence.GenerationType.AUTO;
 import static javax.persistence.GenerationType.IDENTITY;
 
-//@AllArgsConstructor
 //@DynamicUpdate
 @Entity
 @Table
+//@AllArgsConstructor
+@RequiredArgsConstructor
+@Getter
+@ToString
 public class Car {
 
     @Id
