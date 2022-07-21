@@ -17,16 +17,13 @@ import uk.sky.carapplication.service.CarService;
 public class CarController {
     private final CarService carService;
 
-    @Autowired CarRepository carRepo;
-
     public CarController(CarService carService) {
         this.carService = carService;
     }
 
     @PostMapping(path = "/create")
     public ResponseEntity<CreateCarResponse> createCar(@RequestBody Car car){
-        CreateCarResponse response = carService.addCar(car);
-        carRepo.save(car);
+        CreateCarResponse response = carService.responseForAddingCarToDatabase(car);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

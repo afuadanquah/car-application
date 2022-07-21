@@ -31,5 +31,6 @@ public class Car {
     @Column(nullable = false)
     private double price;
 
-
+    public Car(int i, String brand, String model, String colour, int yearMade, int price) {
+    }
 }
