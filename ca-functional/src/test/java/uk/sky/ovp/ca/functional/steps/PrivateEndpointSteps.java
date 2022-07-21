@@ -22,22 +22,22 @@ public class PrivateEndpointSteps {
 
     @When("The client calls {string}")
     public void clientSendsGetRequest(String endPoint) {
-        httpRequest.setResponse(client.getResponse(endPoint));
+        httpRequest.setGetResponse(client.getResponse(endPoint));
     }
 
     @Then("The client receives a code of {int}")
     public void clientReceivesStatusCode(int statusCode){
-        assertThat(httpRequest.getResponseStatusCode()).isEqualTo(statusCode);
+        assertThat(httpRequest.getGetResponseStatusCode()).isEqualTo(statusCode);
     }
 
     @And("The client receives a body of {string}")
     public void clientReceivesResponseBody(String responseBody){
-        assertThat(httpRequest.getResponseBody()).isEqualTo(responseBody);
+        assertThat(httpRequest.getGetResponseBody()).isEqualTo(responseBody);
     }
 
     @And("The client receives a header of {string}")
     public void clientReceivesIDHeader(String header){
-        assertNotNull(httpRequest.getResponse().getHeader(header));
+        assertNotNull(httpRequest.getGetResponse().getHeader(header));
     }
 
 

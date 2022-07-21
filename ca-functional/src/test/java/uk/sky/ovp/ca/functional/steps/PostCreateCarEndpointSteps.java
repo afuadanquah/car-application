@@ -17,18 +17,18 @@ public class PostCreateCarEndpointSteps {
     private HttpRequest httpRequest;
     private Client client;
 
-    @When("The client calls {string}")
+    @When("The client makes a call {string}")
     public void clientSendsPostRequest(String endPoint) {
-        httpRequest.setResponse(client.getResponse(endPoint));
+        httpRequest.setPostResponse(client.getResponse(endPoint));
     }
 
-    @Then("The client receives a code of {int}")
+    @Then("The client receives code of {int}")
     public void clientReceivesStatusCode(int statusCode){
-        assertThat(httpRequest.getResponseStatusCode()).isEqualTo(statusCode);
+        assertThat(httpRequest.getPostResponseStatusCode()).isEqualTo(statusCode);
     }
 
-//    @And("The client receives a body message of {string}")
+//    @And("The client receives body of {string}")
 //    public void clientReceivesResponseBody(String responseBody){
-//        assertThat(httpRequest.getResponseBody().ge).isEqualTo(responseBody);
+//        assertThat(httpRequest.getPostResponseBody()).isEqualTo(responseBody);
 //    }
 }
