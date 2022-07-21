@@ -26,8 +26,6 @@ public class CarService {
         CreateCarResponse response = new CreateCarResponse(HttpStatus.OK, "Car added successfully", car);
         carRepository.save(car);
         listOfCars.add(car);
-        System.out.println(car.toString());
-
         return response;
     }
 

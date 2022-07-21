@@ -15,6 +15,7 @@ import uk.sky.carapplication.service.CarService;
 @RestController
 @RequestMapping("/car")
 public class CarController {
+
     private final CarService carService;
 
     public CarController(CarService carService) {

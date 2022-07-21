@@ -11,8 +11,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 //@DynamicUpdate
 @Entity
 @Table
-//@AllArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
+//@RequiredArgsConstructor
 @Getter
 @ToString
 public class Car {
@@ -31,6 +31,6 @@ public class Car {
     @Column(nullable = false)
     private double price;
 
-    public Car(int i, String brand, String model, String colour, int yearMade, int price) {
-    }
+//    public Car(int i, String brand, String model, String colour, int yearMade, int price) {
+//    }
 }

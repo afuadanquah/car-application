@@ -14,12 +14,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 import uk.sky.carapplication.controller.CarController;
 import uk.sky.carapplication.model.Car;
 import uk.sky.carapplication.repository.CarRepository;
+import uk.sky.carapplication.service.CarService;
 
 import java.util.Objects;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.matches;
+import static org.mockito.Mockito.doCallRealMethod;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -28,33 +30,22 @@ public class CarServiceTest {
 
 
     @InjectMocks
-    CarController carController;
+    CarService carService;
 
     @Mock
-    CarService carService;
-//    Car car;
-
-//    @BeforeEach
-//    Car testCar = new Car(1, "BMW", "Series 3", "black", 2010, 15000);
-
-    private CarRepository carRepository = Mockito.mock(CarRepository.class);
-
-    public void CarController(CarService carService) {
-        this.carService = carService;
-    }
+    CarRepository carRepository;
 
     @Test
     public void testThatBodyIsCorrect(){
         Car testCar = new Car(1, "BMW", "Series 3", "black", 2010, 15000);
-        System.out.println(testCar.toString());
-        assertTrue(Objects.requireNonNull(carController.createCar(testCar).getBody()).getMessage().matches("Car added successfully"));
+        //doCallRealMethod().when(carService).responseForAddingCarToDatabase(Mockito.any(Car.class));
+        assertTrue(carService.responseForAddingCarToDatabase(testCar).getMessage().matches("Car added successfully"));
     }
 
     @Test
     public void testStatusCodeIsSuccessful() {
         Car testCar = new Car(1, "BMW", "Series 3", "black", 2010, 15000);
-
-        assertTrue(carController.createCar(testCar).getStatusCode().is2xxSuccessful());
+        assertTrue(carService.responseForAddingCarToDatabase(testCar).getStatus().is2xxSuccessful());
     }
 
     @Test
